@@ -5,3 +5,10 @@ Description: Basic Theme From Scratch
 Version: 0.0.1
 Tags: bootstrap
 */
+
+
+#square {
+    height: 50px;
+    width: 100px ;
+    background-color: red;
+}
