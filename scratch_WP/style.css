@@ -7,8 +7,12 @@ Tags: bootstrap
 */
 
 
-#square {
-    height: 50px;
-    width: 100px ;
-    background-color: red;
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
 }
+
+.grid-item {
+
+}
+

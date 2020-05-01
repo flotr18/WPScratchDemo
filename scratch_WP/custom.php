@@ -30,6 +30,8 @@ get_header();
 
      <?php
 
+     /*
+
      $args = array(
              'post_type' => 'post'
      );
@@ -48,7 +50,17 @@ get_header();
          }
      }
 
+     */
+
      ?>
+
+
+
+     <div class="grid-container">
+         <?php  for ($i = 0; $i <= 9; $i++) { ?>
+        <div class="grid-item"><?=$i?></div>
+     <?php } ?>
+     </div>
 
 
 
