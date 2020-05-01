@@ -30,7 +30,7 @@ get_header();
 
      <?php
 
-     /*
+
 
      $args = array(
              'post_type' => 'post'
@@ -38,19 +38,9 @@ get_header();
 
      $post_query = new WP_Query($args);
 
-     if ($post_query->have_posts()) {
-         while ($post_query->have_posts()){
-             $post_query->the_post();
-             ?>
-             <h2><?php the_title()?></h2>
-             <?php if (has_post_thumbnail() ){
-             the_post_thumbnail();
-             }; ?>
-             <?php
-         }
-     }
 
-     */
+
+
 
      ?>
 
@@ -58,7 +48,17 @@ get_header();
 
      <div class="grid-container">
          <?php  for ($i = 0; $i <= 9; $i++) { ?>
-        <div class="grid-item"><?=$i?></div>
+        <div class="grid-item"><?php  if ($post_query->have_posts()) {
+                while ($post_query->have_posts()){
+                    $post_query->the_post();
+                    ?>
+                    <h2><?php the_title()?></h2>
+                    <?php if (has_post_thumbnail() ){
+                        the_post_thumbnail();
+                    }; ?>
+                    <?php
+                }
+            }?></div>
      <?php } ?>
      </div>
 
