@@ -36,18 +36,16 @@ get_header();
              'post_type' => 'post'
      );
 
-     $post_query = new WP_Query($args);
+     $post_query = new WP_Query($args); ?>
+
+     <br>
 
 
-
-
-
-     ?>
 
 
 
      <div class="grid-container">
-         <?php  for ($i = 0; $i <= 9; $i++) { ?>
+         <?php  for ($i = 1; $i <= wp_count_posts(); $i++) { ?>
         <div class="grid-item"><?php  if ($post_query->have_posts()) {
                 while ($post_query->have_posts()){
                     $post_query->the_post();
@@ -61,6 +59,7 @@ get_header();
             }?></div>
      <?php } ?>
      </div>
+
 
 
 
